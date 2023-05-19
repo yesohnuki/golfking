@@ -1,13 +1,21 @@
 class GolfclubsController < ApplicationController
   def new
+    @golfclub = Golfclub.new
   end
 
-  def index
+  # 以下を追加
+  def create
+    # １.&2. データを受け取り新規登録するためのインスタンス作成
+    golfclub = Golfclub.new(golfclub_params)
+    # 3. データをデータベースに保存するためのsaveメソッド実行
+    golfclub.save
+    # 4. トップ画面へリダイレクト
+    redirect_to '/top'
   end
 
-  def show
-  end
-
-  def edit
+  private
+  # ストロングパラメータ
+  def golfclub_params
+    params.require(:golfclub).permit(:title, :body)
   end
 end

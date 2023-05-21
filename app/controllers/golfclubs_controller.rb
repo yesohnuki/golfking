@@ -10,7 +10,15 @@ class GolfclubsController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     golfclub.save
     # 4. トップ画面へリダイレクト
-    redirect_to '/top'
+    redirect_to golfclub_path(golfclub.id)
+  end
+
+  def index
+    @golfclubs = Golfclub.all
+  end
+
+  def show
+    @golfclub = Golfclub.find(params[:id])
   end
 
   private

@@ -21,6 +21,17 @@ class GolfclubsController < ApplicationController
     @golfclub = Golfclub.find(params[:id])
   end
 
+  def edit
+    @golfclub = Golfclub.find(params[:id])
+  end
+
+  def update
+    golfclub = Golfclub.find(params[:id])
+    golfclub.update(golfclub_params)
+    redirect_to golfclub_path(golfclub.id)
+  end
+
+
   private
   # ストロングパラメータ
   def golfclub_params

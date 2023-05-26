@@ -7,4 +7,11 @@
     <%= link_to golfclub.title, golfclub_path(golfclub.id) %>
   </span>
 
+  <p>画像</p>
+  <% if golfclub.image.attached? %>
+    <%= image_tag golfclub.image, size: "100x100" %>
+  <% else %>
+    <%= image_tag 'no_image1', size: "100x100" %>
+  <% end %>
+
 <% end %>

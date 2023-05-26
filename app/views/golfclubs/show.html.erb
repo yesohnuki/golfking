@@ -3,3 +3,11 @@
 
 <h2>本文</h2>
 <p><%= @golfclub.body %></p>
+<h2>画像</h2>
+<% if @golfclub.image.attached? %>
+  <%= image_tag @golfclub.image, size: "100x100" %>
+<% else %>
+  <%= image_tag 'no_image1', size: "100x100" %>
+<% end %>
+
+<%= link_to "編集", edit_golfclub_path(@golfclub.id) %>

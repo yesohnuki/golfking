@@ -31,6 +31,12 @@ class GolfclubsController < ApplicationController
     redirect_to golfclub_path(golfclub.id)
   end
 
+  def destroy
+    golfclub = Golfclub.find(params[:id])  # データ（レコード）を1件取得
+    golfclub.destroy  # データ（レコード）を削除
+    redirect_to '/golfclubs'  # 投稿一覧画面へリダイレクト
+  end
+
 
   private
 

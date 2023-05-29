@@ -11,3 +11,4 @@
 <% end %>
 
 <%= link_to "編集", edit_golfclub_path(@golfclub.id) %>
+<%= link_to "削除", golfclub_path(@golfclub.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

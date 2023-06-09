@@ -10,7 +10,7 @@ class GolfclubsController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     golfclub.save
     # 4. トップ画面へリダイレクト
-    redirect_to golfclub_path(golfclub.id)
+    redirect_to golfclubs_path(golfclub.id)
   end
 
   def index

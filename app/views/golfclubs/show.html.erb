@@ -3,6 +3,7 @@
 
 <h2>本文</h2>
 <p><%= @golfclub.body %></p>
+<p>投稿ユーザー画像：<%= image_tag @golfclub.user.get_profile_image(100,100) %></p>
 <h2>画像</h2>
 <% if @golfclub.image.attached? %>
   <%= image_tag @golfclub.image, size: "100x100" %>

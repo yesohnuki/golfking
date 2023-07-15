@@ -5,11 +5,11 @@ class GolfclubsController < ApplicationController
 
   # 以下を追加
   def create
-    # １.&2. データを受け取り新規登録するためのインスタンス作成
+
     golfclub = Golfclub.new(golfclub_params)
-    # 3. データをデータベースに保存するためのsaveメソッド実行
+
     golfclub.save
-    # 4. トップ画面へリダイレクト
+
     redirect_to golfclubs_path(golfclub.id)
   end
 

@@ -5,11 +5,10 @@ class GolfclubsController < ApplicationController
 
   # 以下を追加
   def create
-
     golfclub = Golfclub.new(golfclub_params)
-
     golfclub.save
-
+  if golfclub.save
+      flash[:notice] = "投稿が成功しました"
     redirect_to golfclubs_path(golfclub.id)
   end
 

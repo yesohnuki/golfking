@@ -7,9 +7,12 @@ class GolfclubsController < ApplicationController
   def create
     golfclub = Golfclub.new(golfclub_params)
     golfclub.save
-  if golfclub.save
-      flash[:notice] = "投稿が成功しました"
-    redirect_to golfclubs_path(golfclub.id)
+    if golfclub.save
+        flash[:notice] = "投稿が成功しました"
+      redirect_to golfclubs_path(golfclub.id)
+    else
+      render :new
+    end
   end
 
   def index
